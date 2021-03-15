@@ -13,44 +13,38 @@ def scrape():
     # Visit news url with splinter
     news_url = 'https://mars.nasa.gov/news/'
     browser.visit(news_url)
-
-    # Iterate through page
-    for x in range(1):
         
-        # HTML object
-        html = browser.html
-        
-        # Parse with BeautifulSoup
-        soup = bs(html, 'html.parser')
-        
-        # Grab first element that contains news
-        articles = soup.find_all('li', class_='slide')[0]
-        
-        # Loop through articles to find title and paragraph
-        for article in articles:
-            title = article.find('div', class_='content_title').text
-            news_p = article.find('div', class_='article_teaser_body').text
+    # HTML object
+    html = browser.html
+    
+    # Parse with BeautifulSoup
+    soup = bs(html, 'html.parser')
+    
+    # Grab first element that contains news
+    articles = soup.find_all('li', class_='slide')[0]
+    
+    # Loop through articles to find title and paragraph
+    for article in articles:
+        title = article.find('div', class_='content_title').text
+        news_p = article.find('div', class_='article_teaser_body').text
 
     #### JPL Mars Featured Image ####
     # Create base and image url then broswe to image url with splinter
     base_url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/'
     image_url = 'https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html'
     browser.visit(image_url)
-
-    # Iterate through page
-    for x in range(1):
     
-        # HTML object
-        html = browser.html
-        
-        # Parse with BeautifulSoup
-        soup = bs(html, 'html.parser')
-        
-        # Find featured image source
-        image = soup.find('div', class_='floating_text_area').a['href']
-        
-        # Add source to base url and print
-        featured_image_url = base_url + image
+    # HTML object
+    html = browser.html
+    
+    # Parse with BeautifulSoup
+    soup = bs(html, 'html.parser')
+    
+    # Find featured image source
+    image = soup.find('div', class_='floating_text_area').a['href']
+    
+    # Add source to base url and print
+    featured_image_url = base_url + image
         
     #### Mars Facts ####
     # Mars facts url, reading with pandas
@@ -103,10 +97,10 @@ def scrape():
     # Create dict for mars info
     mars_info = {}
     mars_info['News Title'] = title
-    mars_info['News_Body'] = news_p
-    mars_info['featured_image'] = featured_image_url
-    mars_info['mars_facts'] = mars_facts_html
-    mars_info['mars_hemispheres'] = image_list
+    mars_info['News Body'] = news_p
+    mars_info['Featured Image'] = featured_image_url
+    mars_info['Mars Facts'] = mars_facts_html
+    mars_info['Mars Hemispheres'] = image_list
 
     # Quit browser
     browser.quit()
