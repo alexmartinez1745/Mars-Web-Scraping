@@ -1,5 +1,5 @@
 # Import libraries
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 import scrape_mars
 
@@ -27,10 +27,6 @@ def scrape():
 
     # Redirect back to home page
     return redirect("/")
-
-
-
-
 
 
 if __name__ == "__main__":

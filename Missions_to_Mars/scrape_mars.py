@@ -96,11 +96,11 @@ def scrape():
         
     # Create dict for mars info
     mars_info = {}
-    mars_info['News Title'] = title
-    mars_info['News Body'] = news_p
-    mars_info['Featured Image'] = featured_image_url
-    mars_info['Mars Facts'] = mars_facts_html
-    mars_info['Mars Hemispheres'] = image_list
+    mars_info['news_title'] = title
+    mars_info['news_body'] = news_p
+    mars_info['featured_image'] = featured_image_url
+    mars_info['mars_facts'] = mars_facts_html
+    mars_info['mars_hemispheres'] = image_list
 
     # Quit browser
     browser.quit()
