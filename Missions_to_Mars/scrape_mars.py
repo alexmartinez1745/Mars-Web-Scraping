@@ -54,8 +54,12 @@ def scrape():
     # Create dataframe for mars facts table
     df = mars_facts[0]
 
+    # Set columns and index
+    df.columns = ['Description', 'Mars']
+    df.set_index('Description', inplace=True)
+
     # Convert data to HTML table string
-    mars_facts_html = df.to_html('mars_facts.html', header=False, index=False)
+    mars_facts_html = df.to_html()
 
     #### Mars Hemispheres ####
     hemisphere_base = 'https://astrogeology.usgs.gov/'
