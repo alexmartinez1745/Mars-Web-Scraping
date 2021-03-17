@@ -29,9 +29,16 @@
             </div>
             <div class="col-md-6">
                 <h5><strong>Mars Facts</strong></h5>
-                <p>{{mars.mars_facts}}</p>
-
+                <p>{{mars.mars_facts | safe}}</p>
             </div>
+        </div>
+        {% for hemisphere in mars.mars_hemispheres %}
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="{{hemisphere.url | safe}}" alt="hemisphere">
+                <caption>{{hemisphere.title | safe}}</caption>
+            </div>
+        {% endfor %}
         </div>
 
 
