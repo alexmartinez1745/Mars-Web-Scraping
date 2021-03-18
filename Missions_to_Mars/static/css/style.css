@@ -1,14 +1,20 @@
+/* Adding margin to bottom of latest mars news */
 .col-md-12 {
     margin-bottom: 10px;
 }
 
+/* Creating a striped table */
 tr:nth-child(odd) {
     background-color: #eee;
 }
 
+/* Table border and width */
 table{
     border: black 2px solid;
+    width: 110%;
 }
+
+/* Padding to the table rows and data */
 td {
     padding: 4px;
 }
@@ -16,4 +22,9 @@ td {
 th {
     text-align: left;
     padding: 4px;
+}
+
+/* Adding margin to each hemisphere card */
+.boxmargin {
+    margin: 10px;
 }
