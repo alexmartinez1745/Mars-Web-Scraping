@@ -19,17 +19,17 @@
         <div class="row">
             <div class="col-md-12">
                 <h3><strong>Latest Mars News</strong></h3>
-                <h4>{{mars.news_title}}</h4>
+                <h5>{{mars.news_title}}</h5>
                 <p>{{mars.news_body}}</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <h3><strong>Featured Mars Image</strong></h3>
                 <img src="{{mars.featured_image}}" width="100%" height="100%">
             </div>
             <div class="col-md-4" id="mars_facts">
-                <h5><strong>Mars Facts</strong></h5>
+                <h5>Mars Facts</h5>
                 <p>{{mars.mars_facts | safe}}</p>
             </div>
         </div>
@@ -37,7 +37,7 @@
         <br>
         
         <div class="row">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <h4 class="text-center">Mars Hemispheres</h4>
                 <hr>
             </div>
@@ -45,7 +45,7 @@
         <div class="row">
             {% for hemisphere in mars.mars_hemispheres %}
             <div class="col-lg-6">
-                <div class="card-margin">
+                <div class="boxmargin">
                     <div class="card" style="width: 30rem;">
                     <img class="card-img-top" src="{{hemisphere.url | safe}}" alt="hemisphere">
                         <div class="card-body">

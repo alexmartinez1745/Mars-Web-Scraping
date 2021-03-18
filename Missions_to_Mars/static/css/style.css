@@ -1,5 +1,19 @@
-.card {
-    /* padding: 40px; */
-    margin-bottom: 1em;
-    /* border: 2px solid; */
+.col-md-12 {
+    margin-bottom: 10px;
+}
+
+tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+table{
+    border: black 2px solid;
+}
+td {
+    padding: 4px;
+}
+
+th {
+    text-align: left;
+    padding: 4px;
 }
